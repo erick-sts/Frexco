@@ -1,0 +1,56 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Registros</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+<body>
+<!--    título-->
+    <div class="col- 8 m-auto pt-4 pb-2 text-center">
+      <h3 style="color: #2E8B57;">Usuários Cadastrados</h3>
+    </div>
+    <hr>
+<!--    fim título-->
+    <div class="col- 8 m-auto pt-2 pb-2 text-center">
+        <a href="/" type="button" class="btn btn-primary">Voltar</a>
+    </div>
+
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Email</th>
+              <th scope="col">Data de Nascimento</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for dbs in db %}
+            <tr>
+              <th>{{dbs.id}}</th>
+              <td>{{dbs.email}}</td>
+              <td>{{dbs.nascimento}}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    </div>
+    <hr>
+<!--    fim tabela-->
+    <footer class="text-center text-lg-start">
+      <!-- Copyright -->
+      <div class="text-center p-3">
+        © 2022
+        <a class="text-dark" href="https://www.linkedin.com/in/erick-oliveira-b560b5126/">Erick Oliveira</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+</body>
+</html>
